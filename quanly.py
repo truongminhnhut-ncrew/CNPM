@@ -22,7 +22,6 @@ class HotelManagementSystem:
         return room
 
     def find_available_rooms(self, room_type_name: str) -> List[Room]:
-        """Tìm các phòng trống theo loại."""
         available = [
             r for r in self.rooms 
             if r.is_available() and r.room_type.type_name == room_type_name
