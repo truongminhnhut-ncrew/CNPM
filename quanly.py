@@ -1,7 +1,5 @@
  LỚP QUẢN LÝ TOÀN HỆ THỐNG
 class HotelManagementSystem:
-    """Lớp trung tâm quản lý toàn bộ hoạt động của khách sạn."""
-
     def __init__(self):
         self.room_types: List[RoomType] = []
         self.rooms: List[Room] = []
@@ -10,8 +8,7 @@ class HotelManagementSystem:
         self.payments: List[Payment] = []
         self.invoices: List[Invoice] = []
         self.notifications: List[Notification] = []
-
-    # --- QUẢN LÝ PHÒNG & LOẠI PHÒNG ---
+     
     def add_room_type(self, type_id: int, name: str, price: float, max_guest: int):
         room_type = RoomType(type_id, name, price, max_guest)
         self.room_types.append(room_type)
@@ -33,7 +30,6 @@ class HotelManagementSystem:
         print(f"[System] Tìm thấy {len(available)} phòng trống loại '{room_type_name}'")
         return available
 
-    # --- QUẢN LÝ KHÁCH HÀNG ---
     def register_customer(self, customer_id: int, name: str, email: str):
         customer = Customer(customer_id, name, email)
         self.customers.append(customer)
